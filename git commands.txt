@@ -1,0 +1,68 @@
+git version
+git config --global user.name "User Name"
+git config --global user.email useremail@gmail.com
+
+mkdir folder-name (creates a folder)
+cd folder-name (goes inside a folder)
+git init (IMPORTANT! must do this before being able to do any git commands in a folder)
+code file-name (creates a file)
+rm file-name (removes a file from workspace)
+git rm file-name (removes a file from workspace and staging area)
+git ls-files (shows the files from the staging area)
+git status (shows if you have already done git add or git commit)
+
+git log (shows commit history for the current branch, press q)
+--all (shows the log for all the branches)
+--oneline (shows the shortend log)
+--graph (shows the graphical representation)
+--stat (shows what files are changed in each commit)
+--patch (runs the diff command for each commit)
+
+git diff (shows the difference between the files in the workspace and staging area)
+git diff --staged (shows the differences between the staging area and local repository)
+
+git branch (shows current branch)
+git branch --merged (shows the branches that have been merged to the current branch)
+git branch --no-merged (shows the branches that have NOT been merged to the current branch)
+git branch -r (shows the remote tracking branches)
+git branch --all (shows all branches, local branches & remote tracking branches)
+
+git branch branch-name (creates a branch)
+git switch branch-name (switches the head to the branch-name branch)
+git switch -c branch-name (git branch branch-name + git switch branch-name)
+git merge branch-name (merges branch-name with the current branch)
+
+git rebase main (moves the base of the feature one branch to the top of the most recent commit done on the main branch)
+git rebase -i HEAD~3 (interactive rebase, can merge commits into a commit, can rearrange commits, specify how many commits from the head to rebase)
+
+git revert commit-id (reverts a commit, click the check button)
+git revert commit-id..commit-id (reverts multiple commits, parent of commit to revert, commit to be rolled back)
+git reset commit-id (moves the head to the commit and removes the lines above but keeps the file before the reset)
+git reset commit-id --hard (git reset but does not keep the file in the working directory)
+git cherry-pick commit-id (brings selected commits from another branch to this branch)
+
+git show commit-id (shows the detailed differences for a particular commit)
+git show commit-id:file-name (shows a specific file that is changed in a commit)
+git ls-tree commit-id (shows the name of the files without the summary)
+
+git stash save -m "This is the stash message" (saves the workspace changes in the stash, can git switch without adding or committing)
+git stash list (shows the stash)
+git stash apply 0 (loads the working directory from the stash, 0 is the stash id)
+git stash clear (clears the stash)
+
+
+git add .
+git commit -m "This is the commit message"
+
+git push https://github.com/user-name/folder-name.git
+git push origin/upstream branch-name
+
+git branch -M main (renames the branch master to main)
+git remote add origin/upstream https://github.com/user-name/folder-name.git
+git push -u origin main
+
+
+git clone https://github.com/user-name/folder-name.git
+git fetch origin/upstream (brings the remote repository changes to the local repository)
+git remote -v (shows the URL that the origin/upstream is mapped to)
+git pull (git fetch + git merge)
